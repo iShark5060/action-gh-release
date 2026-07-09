@@ -13,9 +13,9 @@ Node 24 Actions runtime. If you still need the last Node 20-compatible line, sta
 
 ### Other Changes 🔄
 
-* Move the action runtime and bundle target to Node 24
-* Update `@types/node` to the Node 24 line and allow future Dependabot updates
-* Keep the floating major tag on `v3`; `v2` remains pinned to the latest `2.x` release
+- Move the action runtime and bundle target to Node 24
+- Update `@types/node` to the Node 24 line and allow future Dependabot updates
+- Keep the floating major tag on `v3`; `v2` remains pinned to the latest `2.x` release
 
 ## 2.6.2
 
@@ -23,9 +23,9 @@ Node 24 Actions runtime. If you still need the last Node 20-compatible line, sta
 
 ### Other Changes 🔄
 
-* chore(deps): bump picomatch from 4.0.3 to 4.0.4 by @dependabot[bot] in https://github.com/softprops/action-gh-release/pull/775
-* chore(deps): bump brace-expansion from 5.0.4 to 5.0.5 by @dependabot[bot] in https://github.com/softprops/action-gh-release/pull/777
-* chore(deps): bump vite from 8.0.0 to 8.0.5 by @dependabot[bot] in https://github.com/softprops/action-gh-release/pull/781
+- chore(deps): bump picomatch from 4.0.3 to 4.0.4 by @dependabot[bot] in https://github.com/softprops/action-gh-release/pull/775
+- chore(deps): bump brace-expansion from 5.0.4 to 5.0.5 by @dependabot[bot] in https://github.com/softprops/action-gh-release/pull/777
+- chore(deps): bump vite from 8.0.0 to 8.0.5 by @dependabot[bot] in https://github.com/softprops/action-gh-release/pull/781
 
 ## 2.6.1
 
@@ -39,7 +39,7 @@ If you still hit an issue after upgrading, please open a report with the bug tem
 
 ### Bug fixes 🐛
 
-* fix: preserve discussion category on publish by @chenrui333 in https://github.com/softprops/action-gh-release/pull/765
+- fix: preserve discussion category on publish by @chenrui333 in https://github.com/softprops/action-gh-release/pull/765
 
 ## 2.6.0
 
@@ -55,18 +55,18 @@ If you still hit an issue after upgrading, please open a report with the bug tem
 
 ### Exciting New Features 🎉
 
-* feat: support previous_tag for generate_release_notes by @pocesar in https://github.com/softprops/action-gh-release/pull/372
+- feat: support previous_tag for generate_release_notes by @pocesar in https://github.com/softprops/action-gh-release/pull/372
 
 ### Bug fixes 🐛
 
-* fix: recover concurrent asset metadata 404s by @chenrui333 in https://github.com/softprops/action-gh-release/pull/760
+- fix: recover concurrent asset metadata 404s by @chenrui333 in https://github.com/softprops/action-gh-release/pull/760
 
 ### Other Changes 🔄
 
-* docs: clarify reused draft release behavior by @chenrui333 in https://github.com/softprops/action-gh-release/pull/759
-* docs: clarify working_directory input by @chenrui333 in https://github.com/softprops/action-gh-release/pull/761
-* ci: verify dist bundle freshness by @chenrui333 in https://github.com/softprops/action-gh-release/pull/762
-* fix: clarify immutable prerelease uploads by @chenrui333 in https://github.com/softprops/action-gh-release/pull/763
+- docs: clarify reused draft release behavior by @chenrui333 in https://github.com/softprops/action-gh-release/pull/759
+- docs: clarify working_directory input by @chenrui333 in https://github.com/softprops/action-gh-release/pull/761
+- ci: verify dist bundle freshness by @chenrui333 in https://github.com/softprops/action-gh-release/pull/762
+- fix: clarify immutable prerelease uploads by @chenrui333 in https://github.com/softprops/action-gh-release/pull/763
 
 ## 2.5.3
 
@@ -81,17 +81,17 @@ If you still hit an issue after upgrading, please open a report with the bug tem
 
 ### Bug fixes 🐛
 
-* fix: prefer token input over GITHUB_TOKEN by @chenrui333 in https://github.com/softprops/action-gh-release/pull/751
-* fix: clean up duplicate drafts after canonicalization by @chenrui333 in https://github.com/softprops/action-gh-release/pull/753
-* fix: support Windows-style file globs by @chenrui333 in https://github.com/softprops/action-gh-release/pull/754
-* fix: normalize refs-tag inputs by @chenrui333 in https://github.com/softprops/action-gh-release/pull/755
-* fix: expand tilde file paths by @chenrui333 in https://github.com/softprops/action-gh-release/pull/756
+- fix: prefer token input over GITHUB_TOKEN by @chenrui333 in https://github.com/softprops/action-gh-release/pull/751
+- fix: clean up duplicate drafts after canonicalization by @chenrui333 in https://github.com/softprops/action-gh-release/pull/753
+- fix: support Windows-style file globs by @chenrui333 in https://github.com/softprops/action-gh-release/pull/754
+- fix: normalize refs-tag inputs by @chenrui333 in https://github.com/softprops/action-gh-release/pull/755
+- fix: expand tilde file paths by @chenrui333 in https://github.com/softprops/action-gh-release/pull/756
 
 ### Other Changes 🔄
 
-* docs: clarify token precedence by @chenrui333 in https://github.com/softprops/action-gh-release/pull/752
-* docs: clarify GitHub release limits by @chenrui333 in https://github.com/softprops/action-gh-release/pull/758
-* documentation clarifications for empty-token handling, `preserve_order`, and special-character asset filename behavior
+- docs: clarify token precedence by @chenrui333 in https://github.com/softprops/action-gh-release/pull/752
+- docs: clarify GitHub release limits by @chenrui333 in https://github.com/softprops/action-gh-release/pull/758
+- documentation clarifications for empty-token handling, `preserve_order`, and special-character asset filename behavior
 
 ## 2.5.2
 
@@ -106,11 +106,11 @@ If you still hit an issue after upgrading, please open a report with the bug tem
 
 ### Bug fixes 🐛
 
-* fix: canonicalize releases after concurrent create by @chenrui333 in https://github.com/softprops/action-gh-release/pull/746
-* fix: preserve prereleased events for prereleases by @chenrui333 in https://github.com/softprops/action-gh-release/pull/748
-* fix: restore dotfile asset labels by @chenrui333 in https://github.com/softprops/action-gh-release/pull/749
-* fix: handle upload already_exists races across workflows by @api2062 in https://github.com/softprops/action-gh-release/pull/745
-* fix: clean up orphan drafts when tag creation is blocked by @chenrui333 in https://github.com/softprops/action-gh-release/pull/750
+- fix: canonicalize releases after concurrent create by @chenrui333 in https://github.com/softprops/action-gh-release/pull/746
+- fix: preserve prereleased events for prereleases by @chenrui333 in https://github.com/softprops/action-gh-release/pull/748
+- fix: restore dotfile asset labels by @chenrui333 in https://github.com/softprops/action-gh-release/pull/749
+- fix: handle upload already_exists races across workflows by @api2062 in https://github.com/softprops/action-gh-release/pull/745
+- fix: clean up orphan drafts when tag creation is blocked by @chenrui333 in https://github.com/softprops/action-gh-release/pull/750
 
 ## 2.5.1
 
@@ -122,13 +122,13 @@ current `master` no longer reproduces the finalize-race behavior reported in `#7
 
 ### Bug fixes 🐛
 
-* fix: fetch correct asset URL after finalization; test; some refactoring by @pzhlkj6612 in https://github.com/softprops/action-gh-release/pull/738
-* fix: release marked as 'latest' despite make_latest: false by @Boshen in https://github.com/softprops/action-gh-release/pull/715
-* fix: use getReleaseByTag API instead of iterating all releases by @kim-em in https://github.com/softprops/action-gh-release/pull/725
+- fix: fetch correct asset URL after finalization; test; some refactoring by @pzhlkj6612 in https://github.com/softprops/action-gh-release/pull/738
+- fix: release marked as 'latest' despite make_latest: false by @Boshen in https://github.com/softprops/action-gh-release/pull/715
+- fix: use getReleaseByTag API instead of iterating all releases by @kim-em in https://github.com/softprops/action-gh-release/pull/725
 
 ### Other Changes 🔄
 
-* dependency updates, including the ESM/runtime compatibility refresh in https://github.com/softprops/action-gh-release/pull/731
+- dependency updates, including the ESM/runtime compatibility refresh in https://github.com/softprops/action-gh-release/pull/731
 
 ## 2.5.0
 
@@ -136,11 +136,11 @@ current `master` no longer reproduces the finalize-race behavior reported in `#7
 
 ### Exciting New Features 🎉
 
-* feat: mark release as draft until all artifacts are uploaded by @dumbmoron in https://github.com/softprops/action-gh-release/pull/692
+- feat: mark release as draft until all artifacts are uploaded by @dumbmoron in https://github.com/softprops/action-gh-release/pull/692
 
 ### Other Changes 🔄
 
-* dependency updates
+- dependency updates
 
 ## 2.4.2
 
@@ -148,11 +148,11 @@ current `master` no longer reproduces the finalize-race behavior reported in `#7
 
 ### Exciting New Features 🎉
 
-* feat: Ensure generated release notes cannot be over 125000 characters by @BeryJu in https://github.com/softprops/action-gh-release/pull/684
+- feat: Ensure generated release notes cannot be over 125000 characters by @BeryJu in https://github.com/softprops/action-gh-release/pull/684
 
 ### Other Changes 🔄
 
-* dependency updates
+- dependency updates
 
 ## 2.4.1
 
@@ -160,8 +160,8 @@ current `master` no longer reproduces the finalize-race behavior reported in `#7
 
 ### Other Changes 🔄
 
-* fix(util): support brace expansion globs containing commas in parseInputFiles by @Copilot in https://github.com/softprops/action-gh-release/pull/672
-* fix: gracefully fallback to body when body_path cannot be read by @Copilot in https://github.com/softprops/action-gh-release/pull/671
+- fix(util): support brace expansion globs containing commas in parseInputFiles by @Copilot in https://github.com/softprops/action-gh-release/pull/672
+- fix: gracefully fallback to body when body_path cannot be read by @Copilot in https://github.com/softprops/action-gh-release/pull/671
 
 ## 2.4.0
 
@@ -169,7 +169,7 @@ current `master` no longer reproduces the finalize-race behavior reported in `#7
 
 ### Exciting New Features 🎉
 
-* feat(action): respect working_directory for files globs by @stephenway in https://github.com/softprops/action-gh-release/pull/667
+- feat(action): respect working_directory for files globs by @stephenway in https://github.com/softprops/action-gh-release/pull/667
 
 ## 2.3.4
 
@@ -177,7 +177,7 @@ current `master` no longer reproduces the finalize-race behavior reported in `#7
 
 ### Bug fixes 🐛
 
-* fix(action): handle 422 already_exists race condition by @stephenway in https://github.com/softprops/action-gh-release/pull/665
+- fix(action): handle 422 already_exists race condition by @stephenway in https://github.com/softprops/action-gh-release/pull/665
 
 ### Other Changes 🔄
 
@@ -189,7 +189,7 @@ current `master` no longer reproduces the finalize-race behavior reported in `#7
 
 ### Exciting New Features 🎉
 
-* feat: add input option `overwrite_files` by @asfernandes in https://github.com/softprops/action-gh-release/pull/343
+- feat: add input option `overwrite_files` by @asfernandes in https://github.com/softprops/action-gh-release/pull/343
 
 ### Other Changes 🔄
 
@@ -197,20 +197,20 @@ current `master` no longer reproduces the finalize-race behavior reported in `#7
 
 ## 2.3.2
 
-* fix: revert fs `readableWebStream` change
+- fix: revert fs `readableWebStream` change
 
 ## 2.3.1
 
 ### Bug fixes 🐛
 
-* fix: fix file closing issue by @WailGree in https://github.com/softprops/action-gh-release/pull/629
+- fix: fix file closing issue by @WailGree in https://github.com/softprops/action-gh-release/pull/629
 
 ## 2.3.0
 
-* Migrate from jest to vitest
-* Replace `mime` with `mime-types`
-* Bump to use node 24
-* Dependency updates
+- Migrate from jest to vitest
+- Replace `mime` with `mime-types`
+- Bump to use node 24
+- Dependency updates
 
 ## 2.2.2
 
@@ -218,14 +218,14 @@ current `master` no longer reproduces the finalize-race behavior reported in `#7
 
 ### Bug fixes 🐛
 
-* fix: updating release draft status from true to false by @galargh in https://github.com/softprops/action-gh-release/pull/316
+- fix: updating release draft status from true to false by @galargh in https://github.com/softprops/action-gh-release/pull/316
 
 ### Other Changes 🔄
 
-* chore: simplify ref_type test by @steinybot in https://github.com/softprops/action-gh-release/pull/598
-* fix(docs): clarify the default for tag_name by @muzimuzhi in https://github.com/softprops/action-gh-release/pull/599
-* test(release): add unit tests when searching for a release by @rwaskiewicz in https://github.com/softprops/action-gh-release/pull/603
-* dependency updates
+- chore: simplify ref_type test by @steinybot in https://github.com/softprops/action-gh-release/pull/598
+- fix(docs): clarify the default for tag_name by @muzimuzhi in https://github.com/softprops/action-gh-release/pull/599
+- test(release): add unit tests when searching for a release by @rwaskiewicz in https://github.com/softprops/action-gh-release/pull/603
+- dependency updates
 
 ## 2.2.1
 
@@ -233,12 +233,13 @@ current `master` no longer reproduces the finalize-race behavior reported in `#7
 
 ### Bug fixes 🐛
 
-* fix: big file uploads by @xen0n in https://github.com/softprops/action-gh-release/pull/562
+- fix: big file uploads by @xen0n in https://github.com/softprops/action-gh-release/pull/562
 
 ### Other Changes 🔄
-* chore(deps): bump @types/node from 22.10.1 to 22.10.2 by @dependabot in https://github.com/softprops/action-gh-release/pull/559
-* chore(deps): bump @types/node from 22.10.2 to 22.10.5 by @dependabot in https://github.com/softprops/action-gh-release/pull/569
-* chore: update error and warning messages for not matching files in files field by @ytimocin in https://github.com/softprops/action-gh-release/pull/568
+
+- chore(deps): bump @types/node from 22.10.1 to 22.10.2 by @dependabot in https://github.com/softprops/action-gh-release/pull/559
+- chore(deps): bump @types/node from 22.10.2 to 22.10.5 by @dependabot in https://github.com/softprops/action-gh-release/pull/569
+- chore: update error and warning messages for not matching files in files field by @ytimocin in https://github.com/softprops/action-gh-release/pull/568
 
 ## 2.2.0
 
@@ -246,32 +247,34 @@ current `master` no longer reproduces the finalize-race behavior reported in `#7
 
 ### Exciting New Features 🎉
 
-* feat: read the release assets asynchronously by @xen0n in https://github.com/softprops/action-gh-release/pull/552
+- feat: read the release assets asynchronously by @xen0n in https://github.com/softprops/action-gh-release/pull/552
 
 ### Bug fixes 🐛
 
-* fix(docs): clarify the default for tag_name by @alexeagle in https://github.com/softprops/action-gh-release/pull/544
+- fix(docs): clarify the default for tag_name by @alexeagle in https://github.com/softprops/action-gh-release/pull/544
 
 ### Other Changes 🔄
 
-* chore(deps): bump typescript from 5.6.3 to 5.7.2 by @dependabot in https://github.com/softprops/action-gh-release/pull/548
-* chore(deps): bump @types/node from 22.9.0 to 22.9.4 by @dependabot in https://github.com/softprops/action-gh-release/pull/547
-* chore(deps): bump cross-spawn from 7.0.3 to 7.0.6 by @dependabot in https://github.com/softprops/action-gh-release/pull/545
-* chore(deps): bump @vercel/ncc from 0.38.2 to 0.38.3 by @dependabot in https://github.com/softprops/action-gh-release/pull/543
-* chore(deps): bump prettier from 3.3.3 to 3.4.1 by @dependabot in https://github.com/softprops/action-gh-release/pull/550
-* chore(deps): bump @types/node from 22.9.4 to 22.10.1 by @dependabot in https://github.com/softprops/action-gh-release/pull/551
-* chore(deps): bump prettier from 3.4.1 to 3.4.2 by @dependabot in https://github.com/softprops/action-gh-release/pull/554
+- chore(deps): bump typescript from 5.6.3 to 5.7.2 by @dependabot in https://github.com/softprops/action-gh-release/pull/548
+- chore(deps): bump @types/node from 22.9.0 to 22.9.4 by @dependabot in https://github.com/softprops/action-gh-release/pull/547
+- chore(deps): bump cross-spawn from 7.0.3 to 7.0.6 by @dependabot in https://github.com/softprops/action-gh-release/pull/545
+- chore(deps): bump @vercel/ncc from 0.38.2 to 0.38.3 by @dependabot in https://github.com/softprops/action-gh-release/pull/543
+- chore(deps): bump prettier from 3.3.3 to 3.4.1 by @dependabot in https://github.com/softprops/action-gh-release/pull/550
+- chore(deps): bump @types/node from 22.9.4 to 22.10.1 by @dependabot in https://github.com/softprops/action-gh-release/pull/551
+- chore(deps): bump prettier from 3.4.1 to 3.4.2 by @dependabot in https://github.com/softprops/action-gh-release/pull/554
 
 ## 2.1.0
 
 ## What's Changed
 
 ### Exciting New Features 🎉
-* feat: add support for release assets with multiple spaces within the name by @dukhine in https://github.com/softprops/action-gh-release/pull/518
-* feat: preserve upload order by @richarddd in https://github.com/softprops/action-gh-release/pull/500
+
+- feat: add support for release assets with multiple spaces within the name by @dukhine in https://github.com/softprops/action-gh-release/pull/518
+- feat: preserve upload order by @richarddd in https://github.com/softprops/action-gh-release/pull/500
 
 ### Other Changes 🔄
-* chore(deps): bump @types/node from 22.8.2 to 22.8.7 by @dependabot in https://github.com/softprops/action-gh-release/pull/539
+
+- chore(deps): bump @types/node from 22.8.2 to 22.8.7 by @dependabot in https://github.com/softprops/action-gh-release/pull/539
 
 ## 2.0.9
 
@@ -280,28 +283,29 @@ current `master` no longer reproduces the finalize-race behavior reported in `#7
 ## 2.0.8
 
 ### Other Changes 🔄
-* chore(deps): bump prettier from 2.8.0 to 3.3.3 by @dependabot in https://github.com/softprops/action-gh-release/pull/480
-* chore(deps): bump @types/node from 20.14.9 to 20.14.11 by @dependabot in https://github.com/softprops/action-gh-release/pull/483
-* chore(deps): bump @octokit/plugin-throttling from 9.3.0 to 9.3.1 by @dependabot in https://github.com/softprops/action-gh-release/pull/484
-* chore(deps): bump glob from 10.4.2 to 11.0.0 by @dependabot in https://github.com/softprops/action-gh-release/pull/477
-* refactor: write jest config in ts by @chenrui333 in https://github.com/softprops/action-gh-release/pull/485
-* chore(deps): bump @actions/github from 5.1.1 to 6.0.0 by @dependabot in https://github.com/softprops/action-gh-release/pull/470
+
+- chore(deps): bump prettier from 2.8.0 to 3.3.3 by @dependabot in https://github.com/softprops/action-gh-release/pull/480
+- chore(deps): bump @types/node from 20.14.9 to 20.14.11 by @dependabot in https://github.com/softprops/action-gh-release/pull/483
+- chore(deps): bump @octokit/plugin-throttling from 9.3.0 to 9.3.1 by @dependabot in https://github.com/softprops/action-gh-release/pull/484
+- chore(deps): bump glob from 10.4.2 to 11.0.0 by @dependabot in https://github.com/softprops/action-gh-release/pull/477
+- refactor: write jest config in ts by @chenrui333 in https://github.com/softprops/action-gh-release/pull/485
+- chore(deps): bump @actions/github from 5.1.1 to 6.0.0 by @dependabot in https://github.com/softprops/action-gh-release/pull/470
 
 ## 2.0.7
 
 ### Bug fixes 🐛
 
-* Fix missing update release body by @FirelightFlagboy in https://github.com/softprops/action-gh-release/pull/365
+- Fix missing update release body by @FirelightFlagboy in https://github.com/softprops/action-gh-release/pull/365
 
 ### Other Changes 🔄
 
-* Bump @octokit/plugin-retry from 4.0.3 to 7.1.1 by @dependabot in https://github.com/softprops/action-gh-release/pull/443
-* Bump typescript from 4.9.5 to 5.5.2 by @dependabot in https://github.com/softprops/action-gh-release/pull/467
-* Bump @types/node from 20.14.6 to 20.14.8 by @dependabot in https://github.com/softprops/action-gh-release/pull/469
-* Bump @types/node from 20.14.8 to 20.14.9 by @dependabot in https://github.com/softprops/action-gh-release/pull/473
-* Bump typescript from 5.5.2 to 5.5.3 by @dependabot in https://github.com/softprops/action-gh-release/pull/472
-* Bump ts-jest from 29.1.5 to 29.2.2 by @dependabot in https://github.com/softprops/action-gh-release/pull/479
-* docs: document that existing releases are updated by @jvanbruegge in https://github.com/softprops/action-gh-release/pull/474
+- Bump @octokit/plugin-retry from 4.0.3 to 7.1.1 by @dependabot in https://github.com/softprops/action-gh-release/pull/443
+- Bump typescript from 4.9.5 to 5.5.2 by @dependabot in https://github.com/softprops/action-gh-release/pull/467
+- Bump @types/node from 20.14.6 to 20.14.8 by @dependabot in https://github.com/softprops/action-gh-release/pull/469
+- Bump @types/node from 20.14.8 to 20.14.9 by @dependabot in https://github.com/softprops/action-gh-release/pull/473
+- Bump typescript from 5.5.2 to 5.5.3 by @dependabot in https://github.com/softprops/action-gh-release/pull/472
+- Bump ts-jest from 29.1.5 to 29.2.2 by @dependabot in https://github.com/softprops/action-gh-release/pull/479
+- docs: document that existing releases are updated by @jvanbruegge in https://github.com/softprops/action-gh-release/pull/474
 
 ## 2.0.6
 

@@ -1,8 +1,10 @@
-import { GitHub } from '@actions/github/lib/utils';
 import { statSync } from 'fs';
 import { open } from 'fs/promises';
-import { lookup } from 'mime-types';
 import { basename } from 'path';
+
+import { GitHub } from '@actions/github/lib/utils';
+import { lookup } from 'mime-types';
+
 import { alignAssetName, Config, isTag, normalizeTagName, releaseBody } from './util';
 
 type GitHub = InstanceType<typeof GitHub>;

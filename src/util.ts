@@ -1,7 +1,8 @@
-import * as glob from 'glob';
 import { statSync, readFileSync } from 'fs';
 import { homedir } from 'os';
 import * as pathLib from 'path';
+
+import * as glob from 'glob';
 
 export interface Config {
   github_token: string;

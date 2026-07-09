@@ -1,3 +1,9 @@
+import { mkdtempSync, rmSync, writeFileSync } from 'fs';
+import { tmpdir } from 'os';
+import { join } from 'path';
+
+import { assert, describe, expect, it, vi } from 'vitest';
+
 import {
   asset,
   findTagFromReleases,
@@ -9,11 +15,6 @@ import {
   Releaser,
   upload,
 } from '../src/github';
-
-import { mkdtempSync, rmSync, writeFileSync } from 'fs';
-import { tmpdir } from 'os';
-import { join } from 'path';
-import { assert, describe, expect, it, vi } from 'vitest';
 
 describe('github', () => {
   const config = {
@@ -774,9 +775,7 @@ describe('github', () => {
           data: { id: 123, name: 'default.config', label: '.config' },
         });
 
-      const listReleaseAssets = vi
-        .fn()
-        .mockResolvedValue([{ id: 99, name: 'default.config', label: '.config' }]);
+      const listReleaseAssets = vi.fn().mockResolvedValue([{ id: 99, name: 'default.config', label: '.config' }]);
       const deleteReleaseAsset = vi.fn().mockResolvedValue(undefined);
       const updateReleaseAsset = vi.fn().mockResolvedValue({
         data: { id: 123, name: 'default.config', label: '.config' },
@@ -846,7 +845,7 @@ describe('github', () => {
 
       let createAttempts = 0;
       const mockReleaser: Releaser = {
-        getReleaseByTag: ({ tag }) => {
+        getReleaseByTag: ({ tag: _tag }) => {
           // First call returns 404 (release doesn't exist yet), subsequent calls find it
           if (createAttempts === 0) {
             return Promise.reject({ status: 404 });
@@ -1154,13 +1153,7 @@ describe('github', () => {
       };
 
       try {
-        const result = await upload(
-          config,
-          releaser,
-          'https://uploads.example.test/assets',
-          dotfilePath,
-          [],
-        );
+        const result = await upload(config, releaser, 'https://uploads.example.test/assets', dotfilePath, []);
 
         expect(updateReleaseAssetSpy).toHaveBeenCalledWith({
           owner: 'owner',
@@ -1289,8 +1282,7 @@ describe('github', () => {
         uploadReleaseAsset: () =>
           Promise.reject({
             status: 404,
-            message:
-              'Not Found - https://docs.github.com/rest/releases/assets#update-a-release-asset',
+            message: 'Not Found - https://docs.github.com/rest/releases/assets#update-a-release-asset',
           }),
       };
 
@@ -1345,8 +1337,7 @@ describe('github', () => {
         uploadReleaseAsset: () =>
           Promise.reject({
             status: 404,
-            message:
-              'Not Found - https://docs.github.com/rest/releases/assets#update-a-release-asset',
+            message: 'Not Found - https://docs.github.com/rest/releases/assets#update-a-release-asset',
             request: {
               url: 'https://uploads.github.com/repos/owner/repo/releases/1/assets?name=.config',
             },
@@ -1407,8 +1398,7 @@ describe('github', () => {
         uploadReleaseAsset: () =>
           Promise.reject({
             status: 404,
-            message:
-              'Not Found - https://docs.github.com/rest/releases/assets#update-a-release-asset',
+            message: 'Not Found - https://docs.github.com/rest/releases/assets#update-a-release-asset',
           }),
       };
 

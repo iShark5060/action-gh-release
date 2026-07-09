@@ -1,9 +1,10 @@
+import { env } from 'process';
+
 import { setFailed, setOutput } from '@actions/core';
 import { getOctokit } from '@actions/github';
+
 import { GitHubReleaser, release, finalizeRelease, upload, listReleaseAssets } from './github';
 import { isTag, parseConfig, paths, unmatchedPatterns, uploadUrl } from './util';
-
-import { env } from 'process';
 
 async function run() {
   try {
@@ -95,7 +96,7 @@ async function run() {
         assets = updatedAssets
           .filter((a) => uploadedAssetIds.has(a.id))
           .map((a) => {
-            const { uploader, ...rest } = a;
+            const { uploader: _uploader, ...rest } = a;
             return rest;
           });
       }

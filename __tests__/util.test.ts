@@ -1,3 +1,5 @@
+import { assert, describe, expect, it } from 'vitest';
+
 import {
   alignAssetName,
   expandHomePattern,
@@ -13,15 +15,13 @@ import {
   uploadUrl,
 } from '../src/util';
 
-import { assert, describe, expect, it } from 'vitest';
+const normalizePath = (value: string) => value.replace(/\\/g, '/');
 
 describe('util', () => {
   describe('uploadUrl', () => {
     it('strips template', () => {
       assert.equal(
-        uploadUrl(
-          'https://uploads.github.com/repos/octocat/Hello-World/releases/1/assets{?name,label}',
-        ),
+        uploadUrl('https://uploads.github.com/repos/octocat/Hello-World/releases/1/assets{?name,label}'),
         'https://uploads.github.com/repos/octocat/Hello-World/releases/1/assets',
       );
     });
@@ -51,9 +51,7 @@ describe('util', () => {
       ]);
     });
     it('handles single-line brace pattern correctly', () => {
-      assert.deepStrictEqual(parseInputFiles('./**/*.{exe,deb,tar.gz}'), [
-        './**/*.{exe,deb,tar.gz}',
-      ]);
+      assert.deepStrictEqual(parseInputFiles('./**/*.{exe,deb,tar.gz}'), ['./**/*.{exe,deb,tar.gz}']);
     });
   });
   describe('releaseBody', () => {
@@ -366,28 +364,25 @@ describe('util', () => {
 
   describe('paths', () => {
     it('resolves files given a set of paths', async () => {
-      assert.deepStrictEqual(paths(['tests/data/**/*', 'tests/data/does/not/exist/*']), [
+      assert.deepStrictEqual(paths(['tests/data/**/*', 'tests/data/does/not/exist/*']).map(normalizePath), [
         'tests/data/foo/bar.txt',
       ]);
     });
 
     it('resolves files relative to working_directory', async () => {
-      assert.deepStrictEqual(paths(['data/**/*'], 'tests'), ['tests/data/foo/bar.txt']);
+      assert.deepStrictEqual(paths(['data/**/*'], 'tests').map(normalizePath), ['tests/data/foo/bar.txt']);
     });
   });
 
   describe('unmatchedPatterns', () => {
     it("returns the patterns that don't match any files", async () => {
-      assert.deepStrictEqual(
-        unmatchedPatterns(['tests/data/**/*', 'tests/data/does/not/exist/*']),
-        ['tests/data/does/not/exist/*'],
-      );
+      assert.deepStrictEqual(unmatchedPatterns(['tests/data/**/*', 'tests/data/does/not/exist/*']), [
+        'tests/data/does/not/exist/*',
+      ]);
     });
 
     it('resolves unmatched relative to working_directory', async () => {
-      assert.deepStrictEqual(unmatchedPatterns(['data/does/not/exist/*'], 'tests'), [
-        'data/does/not/exist/*',
-      ]);
+      assert.deepStrictEqual(unmatchedPatterns(['data/does/not/exist/*'], 'tests'), ['data/does/not/exist/*']);
     });
   });
 
@@ -404,10 +399,7 @@ describe('util', () => {
     });
 
     it('normalizes absolute windows-style glob patterns', () => {
-      assert.equal(
-        normalizeGlobPattern('D:\\a\\repo\\build\\packages\\*', 'win32'),
-        'D:/a/repo/build/packages/*',
-      );
+      assert.equal(normalizeGlobPattern('D:\\a\\repo\\build\\packages\\*', 'win32'), 'D:/a/repo/build/packages/*');
     });
   });
 
@@ -417,7 +409,7 @@ describe('util', () => {
     });
 
     it('expands posix-style tilde paths', () => {
-      assert.equal(expandHomePattern('~/release.txt', '/home/runner'), '/home/runner/release.txt');
+      assert.equal(normalizePath(expandHomePattern('~/release.txt', '/home/runner')), '/home/runner/release.txt');
     });
 
     it('leaves non-tilde paths unchanged', () => {
@@ -428,7 +420,7 @@ describe('util', () => {
   describe('normalizeFilePattern', () => {
     it('expands tilde paths before globbing', () => {
       assert.equal(
-        normalizeFilePattern('~/release-assets/*.tgz', 'linux', '/home/runner'),
+        normalizePath(normalizeFilePattern('~/release-assets/*.tgz', 'linux', '/home/runner')),
         '/home/runner/release-assets/*.tgz',
       );
     });
@@ -473,10 +465,7 @@ describe('parseInputFiles edge cases', () => {
   });
 
   it('handles commas with spaces around braces', () => {
-    assert.deepStrictEqual(parseInputFiles(' ./**/*.{exe,deb} , file.txt '), [
-      './**/*.{exe,deb}',
-      'file.txt',
-    ]);
+    assert.deepStrictEqual(parseInputFiles(' ./**/*.{exe,deb} , file.txt '), ['./**/*.{exe,deb}', 'file.txt']);
   });
 
   it('handles mixed newlines and commas with braces', () => {

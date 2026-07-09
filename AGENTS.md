@@ -45,7 +45,7 @@ When behavior changes, keep the external contract in sync:
 - update `README.md`
 - update `action.yml`
 - update tests under `__tests__/`
-- regenerate `dist/index.js` with `npm run build`
+- regenerate `dist/index.js` with `pnpm run build`
 
 Docs-only changes do not need `dist/index.js` regeneration.
 
@@ -53,10 +53,8 @@ Docs-only changes do not need `dist/index.js` regeneration.
 
 For code changes, run:
 
-- `npm run fmtcheck`
-- `npm run typecheck`
-- `npm run build`
-- `npm test`
+- `pnpm run validate`
+- `pnpm run build`
 
 For behavior changes, also run the relevant external regression workflow(s) in `action-gh-release-test` against the exact ref under test.
 
@@ -77,4 +75,4 @@ For behavior changes, also run the relevant external regression workflow(s) in `
 - Prefer upload-time semantics over filesystem mutation.
 - Be careful with parsing changes around `files`, path handling, and Windows compatibility.
 - Be careful with race-condition fixes; verify both local tests and consumer-repo concurrency harnesses.
-- Do not assume a refactor is safe just because tests are green. This action’s behavior is heavily shaped by GitHub API edge cases.
+- Do not assume a refactor is safe just because tests are green. This action's behavior is heavily shaped by GitHub API edge cases.
